@@ -46,7 +46,7 @@ def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
-    #cambia el color de la cabeza si la serpiente choca o se sale de la cuadrilla
+    #cambia el color de la cabeza si la serpiente choca o se sale de la ventana
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
         update()
