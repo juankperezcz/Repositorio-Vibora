@@ -11,6 +11,29 @@ def change(x, y):
     aim.x = x
     aim.y = y
 
+def colorRand(init):
+    "Randomiza los colores"
+    
+    val=random.randrange(1,6) #se definen los rangos del 1 al 6 para generar un número del 1 al 5
+    if val==1:
+        #por cada vez que se corra el juego el color cambia. En este caso, si el número aleatorio
+        #generado es 1, el color será verde y así con todos los elifs.
+        color = 'red'
+    elif val==2:
+        color = 'blue'
+    elif val==3:
+        color = 'orange'
+    elif val==4:
+        color='pink'
+    elif val==5:
+        color='black'
+    if color==init:
+        color=colorRand(color)
+    return color
+
+snakeColor=colorRand('red') #se define el color default que se menciona en la actividad.
+foodColor=colorRand(snakeColor) #se define el color de la comida de la serpiente
+
 def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
